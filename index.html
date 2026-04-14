@@ -17,6 +17,7 @@
 
     <a-assets>
         <img id="obra1" src="./assets/mona-lisa-da-vinci.jpg">
+        <img id="suelo" src="./assets/baldosa.jpg">
     </a-assets>
 
     <a-scene>
@@ -58,7 +59,7 @@
         </a-plane>
 
 
-        <a-plane rotation="-90 0 0" width="10" height="10" color="green"></a-plane>
+        <a-plane src="#suelo" rotation="-90 0 0" width="10" height="10" material="repeat: 4 4"></a-plane>
         <!-- Pared -->
         <a-plane position="0 2 -5" width="10" height="4" color="#FFFFFF"></a-plane>
 
