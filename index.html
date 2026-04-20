@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -16,8 +16,10 @@
 <body>
 
     <a-assets>
-        <img id="obra1" src="./assets/mona-lisa-da-vinci.jpg">
-        <img id="suelo" src="./assets/baldosa.jpg">
+        <!-- estructura -->
+        <img id="techo" src="./assets/Madera_techo.jpg">
+        <img id="muros" src="./assets/Piedra_muro.jpg">
+        <img id="suelo" src="./assets/Baldosa_madera.jpg">
     </a-assets>
 
     <a-scene>
@@ -53,24 +55,35 @@
             event-set__enter="_event: mouseenter; scale: 1 2 2" event-set__leave="_event: mouseleave; scale: 0.5 1 1"
             onclick="document.querySelector('#infoPanel').setAttribute('visible', true)">
         </a-plane>
-        <a-text value="Obra 1 - Autor" position="0 1 -4.8" align="center" color="black">
         </a-text>
-        <a-plane id="infoPanel" position="0 2 -3" width="3" height="2" color="#FFF" visible="false">
-        </a-plane>
 
 
         <a-plane src="#suelo" rotation="-90 0 0" width="10" height="10" material="repeat: 4 4"></a-plane>
-        <!-- Pared -->
-        <a-plane position="0 2 -5" width="10" height="4" color="#FFFFFF"></a-plane>
+        <!-- Pared frente-->
+        <a-plane src="#muros" position="0 2 -5" width="10" height="4" color="#FFFFFF" material="repeat: 2 2"></a-plane>
+        <a-text position="-1.5 3 -4.8" align="center" color="black" text="value: Obras maestras">
+        </a-text>
+        <a-text position="2.6 3 -4.8" align="center" color="black" value="Ciencia y proporción">
+        </a-text>
+        <!-- pared trasera -->
+        <a-plane src="#muros" position="0 2 5" width="10" height="4" color="#FFFFFF" rotation="0 180 0" material="repeat: 2 2"></a-plane>
 
         <!-- Pared izquierda -->
-        <a-plane position="-5 2 0" rotation="0 90 0" width="10" height="4" color="#FFFFFF"></a-plane>
+        <a-plane src="#muros" position="-5 2 0" rotation="0 90 0" width="10" height="4" color="#FFFFFF" material="repeat: 2 2"></a-plane>
+        <a-text position="4.9 3 0" align="center" color="black" text="value: Legado y final de vida" rotation="0 -90 0">
+        </a-text>
 
         <!-- Pared derecha -->
-        <a-plane position="5 2 0" rotation="0 -90 0" width="10" height="4" color="#FFFFFF"></a-plane>
+        <a-plane src="#muros" position="5 2 0" rotation="0 -90 0" width="10" height="4" color="#FFFFFF" material="repeat: 2 2"></a-plane>
+        <!-- Origenes de leonardo -->
+        <a-text position="-4.9 2.8 1.4" align="center" color="black" text="value: Origenes de Leonardo" rotation="0 90 0">
+        </a-text>
+        <!-- ingenio y ciencia  -->
+        <a-text position="-4.9 2.8 -1.97871" align="center" color="black" text="value: Ingenio y ciencia" rotation="0 90 0">
+        </a-text>
 
         <!-- Techo -->
-        <a-plane position="0 4 0" rotation="90 0 0" width="10" height="10" color="#EEEEEE"></a-plane>
+        <a-plane src="#techo" position="0 4 0" rotation="90 0 0" width="10" height="10" material="repeat: 5 5"></a-plane>
 
 
         <a-light type="ambient" intensity="0.8"></a-light>
