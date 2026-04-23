@@ -13,6 +13,8 @@
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <!-- componente para fuentes personalizadas -->
     <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
+
+    
 </head>
 
 <body>
@@ -49,7 +51,9 @@
         ----------------------------------------
          -->
         <a-entity camera look-controls position="0 1.6 2.5">
-            <a-cursor fuse="true" fuse-timeout="1500" raycaster="objects: .interactivo">
+            <!-- <a-cursor fuse="true" fuse-timeout="1500" raycaster="objects: .interactivo">
+            </a-cursor> -->
+            <a-cursor fuse="true" fuse-timeout="1500">
             </a-cursor>
         </a-entity>
         <!-- <a-sound src="#neigh"></a-sound>
@@ -65,19 +69,11 @@
                 SONIDOS
         ----------------------------------
          -->
-        <a-entity sound="src: #intro; autoplay: true; loop: true; volume: 1"></a-entity>
-        
-        <a-box class="interactivo" position="0 0.4 -0.7" color="red"
-        sound="src: #intro"
-        event-set__enter="_event: mouseenter; _target: #intro; sound.playSound: true">
-        </a-box>
+        <a-entity id="bg-sound" sound="src: #ambiente; loop: true; volume: 1"></a-entity>
+        <!-- sonido funcional -->
+        <a-entity id="audio-play" position="-4.9 0.5 2.1" color="red" geometry="primitive: plane" sound="src: #intro" rotation="0 90 0" scale="0.3 0.3 0.3">
+        </a-entity>
 
-        <script>
-            const boton = document.querySelector('#intro');
-            boton.addEventListener('click', () => {
-                boton.components.sound.playSound();
-            });
-        </script>
         <!-- 
         ----------------------------------
                 ESTRUCTURA MUSEO 
@@ -286,6 +282,7 @@
         <a-light type="ambient" intensity="0.5"></a-light>
     </a-scene>
 
+    <script src="./js/play_sound.js"></script>
 </body>
 
 </html>
