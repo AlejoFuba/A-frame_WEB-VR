@@ -30,6 +30,8 @@
         <!-- 1. origenes  -->
         <img id="davinci" src="./assets/Leonardo_Davinci.jpg">
 
+        <img id="speaker" src="./assets/speaker.png">
+
         <!-- modelos 3D -->
         <a-asset-item id="invento" src="./assets/da_vinci_tank.glb"></a-asset-item>
         <a-asset-item id="invento_volador" src="./assets/flying_machine.glb"></a-asset-item>
@@ -69,9 +71,9 @@
                 SONIDOS
         ----------------------------------
          -->
-        <a-entity id="bg-sound" sound="src: #ambiente; loop: true; volume: 1"></a-entity>
         <!-- sonido funcional -->
-        <a-entity id="audio-play" position="-4.9 0.5 2.1" color="red" geometry="primitive: plane" sound="src: #intro" rotation="0 90 0" scale="0.3 0.3 0.3">
+
+        <a-entity id="audio-play" position="-4.9 0.5 2.1" color="red" geometry="primitive: plane" material="src: #speaker" sound="src: #intro" rotation="0 90 0" scale="0.3 0.3 0.3">
         </a-entity>
 
         <!-- 
@@ -119,11 +121,11 @@
                 geometry="height: 6.12; width: 4.67" scale="0.3 0.3 0.3"
                                 event-set__enter="_event: mouseenter; _target: #presentacion; visible: true"
                 event-set__leave="_event: mouseleave; _target: #presentacion; visible: false">
-                <a-text id="presentacion" value="Leonardo Davinci" align="center" color="#FFF" visible="false"
-                    position="0 -0.55 0.55" geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
+                <a-text id="presentacion" visible="false"  text="anchor: align; width: 10.12; value: Leonardo Davinci; align: center; color: #FFF"
+                    position="0 -2 0.55" geometry="primitive: plane; width: 3.94" material="color: #333"></a-text>
             </a-plane>
-            <a-text value="Leonardo Davinci"></a-text>
-            <a-text value="18--- al 12999"></a-text>
+            <!-- <a-text value="Leonardo Davinci"></a-text>
+            <a-text value="18--- al 12999"></a-text> -->
         </a-entity>
 
 
@@ -199,7 +201,7 @@
         -------------------------------------
         -->
         <!-- tanque -->
-         <a-entity gltf-model="./assets/da_vinci_tank.glb" position="2.33128 0 0.20644" scale="20 20 20" rotation="0 200.64802502765747 0" animation="dur: 20000; loop: true; property: rotation; to: 0 360 0">
+         <a-entity gltf-model="#invento" position="2.3 0 0.2" scale="20 20 20" rotation="0 200.64802502765747 0" animation="dur: 20000; loop: true; property: rotation; to: 0 360 0">
         </a-entity>
 
         <!-- volador -->
